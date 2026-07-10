@@ -43,7 +43,7 @@ export function FinalCelebration({ onReplay, typeDone, onTypeDone }) {
             color: 'transparent',
           }}
         >
-          Happy 18th Birthday, {FRIEND_SHORT_NAME} 🎂⚡
+          Happy 19th Birthday, {FRIEND_SHORT_NAME} 🎂⚡
         </motion.h1>
 
         <div className="glass mt-10 rounded-3xl p-8 text-left">
@@ -54,6 +54,16 @@ export function FinalCelebration({ onReplay, typeDone, onTypeDone }) {
             className="text-base leading-relaxed text-white/85 sm:text-lg"
           />
         </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: typeDone ? 1 : 0, y: typeDone ? 0 : 10 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+          className="mt-8 font-display text-xl font-medium italic text-amber-200/90"
+          style={{ textShadow: '0 0 20px rgba(251,191,36,0.5)' }}
+        >
+          May God be with you in your entrance exam.
+        </motion.p>
 
         <motion.button
           type="button"
@@ -66,57 +76,15 @@ export function FinalCelebration({ onReplay, typeDone, onTypeDone }) {
         </motion.button>
       </motion.div>
 
-<motion.div
-  initial={{ opacity: 0, y: 20, scale: 0.95 }}
-  animate={{ opacity: 1, y: [0, -4, 0], scale: 1 }}
-  transition={{
-    duration: 3,
-    repeat: Infinity,
-    ease: "easeInOut"
-  }}
-  className="
-    pointer-events-none fixed bottom-4 right-4 z-20
-    px-5 py-2 rounded-full
-    text-xs font-medium text-cyan-200
-    backdrop-blur-xl
-    border border-white/20
-  "
-  style={{
-    background: "rgba(255,255,255,0.06)",
-    boxShadow: `
-      0 8px 30px rgba(0,0,0,0.6),
-      inset 0 1px 1px rgba(255,255,255,0.25),
-      inset 0 -1px 2px rgba(255,255,255,0.1)
-    `,
-    textShadow: `
-      0 0 8px rgba(34,211,238,0.6)
-    `
-  }}
+<div
+  className="pointer-events-none fixed bottom-8 left-0 right-0 z-20 flex justify-center opacity-60"
 >
-  {/* ✨ Top glass highlight */}
-  <span
-    className="absolute inset-0 rounded-full"
-    style={{
-      background:
-        "linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(255,255,255,0.05) 40%, transparent 60%)",
-      pointerEvents: "none"
-    }}
-  />
-
-  {/* ✨ Inner shine */}
-  <span
-    className="absolute inset-[1px] rounded-full"
-    style={{
-      background:
-        "linear-gradient(120deg, rgba(255,255,255,0.15), transparent 60%)",
-      pointerEvents: "none"
-    }}
-  />
-
-  <span className="relative z-10">
-    made by friend Beka 😁
-  </span>
-</motion.div>
+  <div className="flex items-center gap-4 text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase">
+    <div className="h-[1px] w-8 bg-white/40"></div>
+    <span>made by friend</span>
+    <div className="h-[1px] w-8 bg-white/40"></div>
+  </div>
+</div>
     </div>
   )
 }

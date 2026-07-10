@@ -26,10 +26,10 @@ export function Level3Cake({ candleLit, wishAccepted, fxBurst, shake, onFlameCli
         animate={shake ? { x: [0, -6, 6, -5, 5, 0], scale: [1, 1.02, 0.99, 1] } : {}}
         transition={{ duration: 0.55 }}
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-violet-300/90">The cake ritual</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-violet-300/90">The 19th Level Boss</p>
         <h2 className="mt-3 font-display text-3xl font-extrabold text-glow sm:text-4xl">Make a wish… then blow the candle</h2>
         <p className="mx-auto mt-3 max-w-lg text-sm text-white/55">
-          Tap the flame — your track plays once, only here.
+          Tap the flame — your anthem drops once, only here.
         </p>
 
         <div className="relative mx-auto mt-5 h-[min(58vh,520px)] w-full max-w-3xl overflow-hidden rounded-[2rem] border border-white/10 bg-black/50 shadow-[0_0_90px_rgba(168,85,247,0.28)]">
@@ -65,7 +65,7 @@ export function Level3Cake({ candleLit, wishAccepted, fxBurst, shake, onFlameCli
 
         <div className="mt-6 space-y-2">
           {!wishAccepted && (
-            <p className="text-sm text-white/45">{candleLit ? 'Waiting for your breath…' : 'Sealing the wish…'}</p>
+            <p className="text-sm text-white/45">{candleLit ? 'Waiting for you to blow it out…' : 'Sealing the wish…'}</p>
           )}
           {wishAccepted && (
             <motion.div
@@ -90,7 +90,7 @@ export function Level3Cake({ candleLit, wishAccepted, fxBurst, shake, onFlameCli
                 whileTap={{ scale: 0.98 }}
                 className="rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-10 py-3 font-display font-bold text-white shadow-lg"
               >
-                Continue to memories →
+                Unlock the memories →
               </motion.button>
             </motion.div>
           )}

@@ -39,10 +39,10 @@ export function Level4Memory({ introActive, onIntroComplete, onContinue }) {
         }}
         className={`relative z-10 w-full max-w-5xl text-center ${interactive ? '' : 'pointer-events-none'}`}
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200/80">Level 4 — Memory sparks</p>
-        <h2 className="mt-3 font-display text-3xl font-extrabold text-glow sm:text-4xl">Polars from the timeline</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-200/80">Level 4 — The Lore</p>
+        <h2 className="mt-3 font-display text-3xl font-extrabold text-glow sm:text-4xl">Moments from Medi's era</h2>
         <p className="mx-auto mt-2 max-w-xl text-sm text-white/45">
-       Relive the memories that matter
+       Scroll through the iconic moments of your last patch notes.
         </p>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-8 sm:gap-10">
@@ -125,7 +125,7 @@ bg-clip-text text-transparent sm:text-3xl md:text-4xl"
     textShadow: '0 0 40px rgba(167,139,250,0.55), 0 0 80px rgba(236,72,153,0.25), 0 4px 24px rgba(0,0,0,0.45)',
   }}
 >
-  ✨ Step into the aesthetic vibes! 🌟
+  ✨ Entering your aesthetic era! 🌟
 </motion.p>
           </motion.div>
         )}

@@ -36,9 +36,9 @@ export function Level2Energy({ onFull, onChargeClick }) {
         animate={{ opacity: 1, scale: 1 }}
         className="relative z-10 w-full max-w-lg text-center"
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/90">Level 2 — Energy build-up</p>
-        <h2 className="mt-4 font-display text-3xl font-extrabold text-glow">Charging birthday energy…</h2>
-        <p className="mt-3 text-sm text-white/50">Press once — watch the bar ignite.</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300/90">Level 2 — Aura Loading</p>
+        <h2 className="mt-4 font-display text-3xl font-extrabold text-glow">Charging 19th birthday aura…</h2>
+        <p className="mt-3 text-sm text-white/50">Tap to manifest maximum vibes.</p>
 
         <div className="mt-10 h-4 overflow-hidden rounded-full bg-white/10 ring-1 ring-white/10">
           <motion.div
@@ -57,7 +57,7 @@ export function Level2Energy({ onFull, onChargeClick }) {
           whileTap={{ scale: 0.97 }}
           className="mt-10 rounded-full bg-white/10 px-10 py-4 font-display font-bold text-white ring-1 ring-white/20 backdrop-blur disabled:opacity-50"
         >
-          {charge >= 100 ? 'Charged ⚡' : 'Charge up'}
+          {charge >= 100 ? 'Aura Maxed ⚡' : 'Charge Aura'}
         </motion.button>
       </motion.div>
     </div>

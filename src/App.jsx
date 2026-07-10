@@ -59,7 +59,7 @@ export default function App() {
 
   const handleWrong = () => {
     playButtonSound()
-    showToast('Relax — even the bouncer knows you’re 2000. Try the first button 😉')
+    showToast("Relax, the algorithm knows you're not a boomer. Try the first button 😉")
   }
 
   const handleCorrect = () => {
@@ -145,9 +145,9 @@ export default function App() {
               animate={{ scale: 1, opacity: 1 }}
               className="font-display text-3xl font-extrabold text-glow sm:text-4xl"
             >
-              Access Granted 🔓
+              Vibe Check Passed 🔓
             </motion.p>
-            <p className="mt-4 text-lg text-emerald-300/95">Welcome, 2018 Champion</p>
+            <p className="mt-4 text-lg text-emerald-300/95">Welcome, Main Character</p>
           </motion.div>
         )}
       </AnimatePresence>

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const lines = [
-  { t: 'Attention… Millennium detected', emoji: '👀' },
-  { t: 'System scanning… Born in 2000?', emoji: '' },
+  { t: 'Attention… Year 19 boss detected', emoji: '👀' },
+  { t: 'System scanning… Born in 2007?', emoji: '' },
 ]
 
 export function EntrySummoning({ onEnter }) {
@@ -38,7 +38,7 @@ export function EntrySummoning({ onEnter }) {
           animate={{ opacity: 1 }}
           className="mb-8 text-[10px] font-bold uppercase tracking-[0.5em] text-violet-300/80"
         >
-          Millennium Birthday Quest ⚡
+          Level 19 Unlocked ⚡
         </motion.p>
 
         <AnimatePresence mode="wait">
@@ -77,9 +77,9 @@ export function EntrySummoning({ onEnter }) {
               className="space-y-8"
             >
               <h1 className="font-display text-4xl font-extrabold text-glow sm:text-5xl">
-                Welcome, Legendary Millennium <span className="not-italic">😎</span>
+                Welcome to your 19th Era, Icon <span className="not-italic">😎</span>
               </h1>
-              <p className="text-sm text-white/50">Ethiopian calendar energy loading… 2018 EC looks different.</p>
+              <p className="text-sm text-white/50">Loading Gen Z energy… 19 years of joy and counting.</p>
               <motion.button
                 type="button"
                 onClick={onEnter}
@@ -87,7 +87,7 @@ export function EntrySummoning({ onEnter }) {
                 whileTap={{ scale: 0.97 }}
                 className="rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-400 px-12 py-4 font-display text-lg font-bold text-white shadow-[0_0_50px_rgba(168,85,247,0.45)]"
               >
-                Enter the Experience
+                Start the Main Quest
               </motion.button>
             </motion.div>
           )}
