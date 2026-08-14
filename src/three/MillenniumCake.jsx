@@ -1,7 +1,35 @@
-import { useRef, useMemo, useLayoutEffect } from 'react'
+import { useRef, useMemo, useLayoutEffect, Component } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { Float, Sparkles, ContactShadows, Environment } from '@react-three/drei'
 import * as THREE from 'three'
+
+class EnvironmentErrorBoundary extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  componentDidCatch(error) {
+    console.warn('3D Environment HDR failed to load, using fallback lighting:', error)
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <group>
+          <ambientLight intensity={0.8} />
+          <directionalLight position={[5, 8, 5]} intensity={1.5} color="#e9d5ff" />
+          <directionalLight position={[-5, 3, -5]} intensity={0.6} color="#a78bfa" />
+        </group>
+      )
+    }
+    return this.props.children
+  }
+}
 
 function Flame({ lit, onExtinguish }) {
   const group = useRef()
@@ -141,7 +169,9 @@ export function MillenniumCakeScene({ candleLit, cameraShake, onBlowRequest }) {
         shadow-mapSize={[1024, 1024]}
       />
       <pointLight position={[-3, 2, 2]} intensity={0.6} color="#a78bfa" />
-      <Environment preset="city" />
+      <EnvironmentErrorBoundary>
+        <Environment files="/environments/potsdamer_platz_1k.hdr" />
+      </EnvironmentErrorBoundary>
       <Float speed={1.4} rotationIntensity={0.18} floatIntensity={0.42}>
         <group>
           <CakeBody />

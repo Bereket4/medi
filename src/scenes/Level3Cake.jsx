@@ -1,8 +1,43 @@
-import { Suspense, useEffect, useRef } from 'react'
+import { Suspense, useEffect, useRef, Component } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MillenniumCakeScene } from '../three/MillenniumCake.jsx'
 import { CinematicConfetti } from '../components/CinematicConfetti.jsx'
+
+class CanvasErrorBoundary extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  componentDidCatch(error) {
+    console.warn('3D Canvas loading error caught by boundary:', error)
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="flex h-full w-full flex-col items-center justify-center p-6 text-center">
+          <div className="text-6xl animate-bounce">🎂</div>
+          <p className="mt-4 font-display text-xl font-bold text-white">19th Birthday Cake</p>
+          <p className="mt-2 text-xs text-white/60">3D preview mode unavailable</p>
+          <button
+            type="button"
+            onClick={this.props.onFlameClick}
+            className="mt-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 px-8 py-3 font-display text-sm font-bold text-white shadow-lg"
+          >
+            Blow the candle 💨
+          </button>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
 
 export function Level3Cake({ candleLit, wishAccepted, fxBurst, shake, onFlameClick, onContinue }) {
   const wishBlockRef = useRef(null)
@@ -33,20 +68,22 @@ export function Level3Cake({ candleLit, wishAccepted, fxBurst, shake, onFlameCli
         </p>
 
         <div className="relative mx-auto mt-5 h-[min(58vh,520px)] w-full max-w-3xl overflow-hidden rounded-[2rem] border border-white/10 bg-black/50 shadow-[0_0_90px_rgba(168,85,247,0.28)]">
-          <Canvas
-            shadows
-            camera={{ position: [0, 1.1, 5.2], fov: 42 }}
-            gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
-            dpr={[1, 2]}
-          >
-            <Suspense fallback={null}>
-              <MillenniumCakeScene
-                candleLit={candleLit}
-                cameraShake={shake}
-                onBlowRequest={onFlameClick}
-              />
-            </Suspense>
-          </Canvas>
+          <CanvasErrorBoundary onFlameClick={onFlameClick}>
+            <Canvas
+              shadows
+              camera={{ position: [0, 1.1, 5.2], fov: 42 }}
+              gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+              dpr={[1, 2]}
+            >
+              <Suspense fallback={null}>
+                <MillenniumCakeScene
+                  candleLit={candleLit}
+                  cameraShake={shake}
+                  onBlowRequest={onFlameClick}
+                />
+              </Suspense>
+            </Canvas>
+          </CanvasErrorBoundary>
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent" />
         </div>
 

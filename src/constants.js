@@ -13,10 +13,10 @@ export const HBD_AUDIO_PATH = '/music/hbd.mp3'
 export const GALLERY_MUSIC_PATH = '/music/idea10.mp3'
 
 /** Interaction SFX in `public/sounds/` */
-export const SFX_BUTTON_A = '/sounds/button.mp3'
-export const SFX_BUTTON_B = '/sounds/button2.mp3'
+export const SFX_BUTTON_A = '/sounds/button.wav'
+export const SFX_BUTTON_B = '/sounds/button.wav'
 export const SFX_TYPING = '/sounds/typing.mp3'
-export const SFX_TRANSITION = '/sounds/transition.mp3'
+export const SFX_TRANSITION = '/sounds/transition.wav'
 
 /** Final typewriter message */
 export const FINAL_MESSAGE = `If I had to describe you in one sentence, I'd probably fail... because one sentence isn't enough. You're one of those genuinely rare people who make life feel brighter just by being around. Your kindness isn't something you switch on it's simply who you are. You have this way of making people smile without even trying, and somehow every conversation with you feels a little brighter than the last. I've always admired how uniquely you see the world, and whether you realize it or not, you've been a role model for me in so many ways.
