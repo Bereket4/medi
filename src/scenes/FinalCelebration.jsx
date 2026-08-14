@@ -55,16 +55,6 @@ export function FinalCelebration({ onReplay, typeDone, onTypeDone }) {
           />
         </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: typeDone ? 1 : 0, y: typeDone ? 0 : 10 }}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
-          className="mt-8 font-display text-xl font-medium italic text-amber-200/90"
-          style={{ textShadow: '0 0 20px rgba(251,191,36,0.5)' }}
-        >
-          May God be with you in your entrance exam.
-        </motion.p>
-
         <motion.button
           type="button"
           onClick={onReplay}
