@@ -1,5 +1,5 @@
 /** Personalize everything here */
-export const FRIEND_SHORT_NAME = 'Bestie'
+export const FRIEND_SHORT_NAME = 'Medi'
 export const FRIEND_NICKNAME = 'Main Character'
 
 /** Set true + add `public/models/cake.glb` to use a custom model (otherwise a cinematic procedural cake is used) */
@@ -21,7 +21,7 @@ export const SFX_TRANSITION = '/sounds/transition.wav'
 /** Final typewriter message */
 export const FINAL_MESSAGE = `If I had to describe you in one sentence, I'd probably fail... because one sentence isn't enough. You're one of those genuinely rare people who make life feel brighter just by being around. Your kindness isn't something you switch on it's simply who you are. You have this way of making people smile without even trying, and somehow every conversation with you feels a little brighter than the last. I've always admired how uniquely you see the world, and whether you realize it or not, you've been a role model for me in so many ways.
 
-Nineteen looks good on you. It will be another chapter filled with new memories, unexpected adventures ,and hopefully a lot more reasons to laugh until your stomach hurts. And yes... somewhere in between all these, there's a tiny little entrance exam waiting for your attention but that's a story for another day . 😉
+Nineteen looks good on you. It will be another chapter filled with new memories, unexpected adventures, and hopefully a lot more reasons to laugh until your stomach hurts.
 
 For today, I just hope you feel celebrated, appreciated, and reminded of how much joy you bring to the people around you.Happy 19th Birthday! May this year surprise you in all the best ways. 🎂✨❤️`
 
